@@ -8,6 +8,8 @@ StartPage.route = {
 
 export default function StartPage() {
   return <section>
-    <h1>Start page!!!</h1>
+    <h3>A frame for every picture</h3>
+    <h1>Wilde Frames</h1>
+
   </section>
 }

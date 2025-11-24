@@ -1,7 +1,8 @@
 import { useLocation } from 'react-router-dom';
-import Header from './partials/header.tsx';
-import Main from './partials/main.tsx';
-import Footer from './partials/footer.tsx';
+import Header from './partials/Header.tsx';
+import Main from './partials/Main.tsx';
+import Footer from './partials/Footer.tsx';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 

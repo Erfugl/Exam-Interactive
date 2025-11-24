@@ -1,0 +1,61 @@
+/* General CSS/Font Sizes*/
+body {
+  margin: 0px;
+  background-color: #F9EAE1
+}
+
+h1 {
+  font-size: 75px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
+h5 {
+  font-size: 18px;
+}
+
+h6 {
+  font-size: 16px;
+}
+
+p {
+  font-size: 16px;
+}
+
+/*Header*/
+header {
+  background-color: #7EE081;
+  width: 100vw;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav {
+  margin: 0 10px 0 10px;
+}
+
+.links {
+  padding: 30px 70px;
+  text-decoration: none;
+  color: black;
+  font-size: 35px;
+}
+
+.links:hover {
+  background-color: #6BDB6F;
+}
+
+/*Footer*/
+footer {
+  background-color: #CC8B86;
+  width: 100vw;
+  height: 200px;
+}
