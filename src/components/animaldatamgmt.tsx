@@ -19,7 +19,7 @@ export const categories = ['All (' + animals.length + ')',
 ...animals
   .map(x => x.category)
   .flat()
-  .map((x, _i, a) => x + '(' + a.filter(y => x === y).length + ')')
+  .map((x, _i, a) => x + ' (' + a.filter(y => x === y).length + ')')
   .filter((x, i, a) => a.indexOf(x) === i)
   .sort()
 ]

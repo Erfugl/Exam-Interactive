@@ -1,4 +1,46 @@
-#animals {
+#animalContainer {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
+  gap: 5px;
+}
+
+.animalCard {
+  width: 500px;
+  height: 1000px;
+  margin: 20px;
+  padding: 20px;
+  background-color: #90a955;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 20px;
+}
+
+.animalImg {
+  width: 100%;
+}
+
+.title {
+  font-size: 70px;
+}
+
+.details {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+}
+
+.aspectRatio {
+  background-color: #bc4749;
+  padding: 20px;
+  border-radius: 30px;
+}
+
+.category {
+  background-color: #bc4749;
+  padding: 20px;
+  border-radius: 30px;
 }
