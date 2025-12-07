@@ -1,7 +1,9 @@
-import AnimalsJson from '../json/animals.json';
-import Animals from '../components/animals';
+import { animals, categories } from '../components/animaldatamgmt';
 import '../scss/productspage.scss';
-import FilterDropdown from '../components/filterdropdown';
+import { useState } from 'react';
+import Select from '../components/select';
+import { Link } from 'react-router-dom';
+
 
 ProductsPage.route = {
   path: '/products',
@@ -9,28 +11,32 @@ ProductsPage.route = {
   index: 2
 };
 
-export interface AnimalData {
-  id: number,
-  name: string,
-  slug: string,
-  description: string,
-  wikiUrl: string,
-  imageAspectRatio: number,
-  category: string;
-}
-
 export default function ProductsPage() {
+  const [categoryChoice, setCategoryChoice] =
+    useState('All');
 
-  const animals: AnimalData[] = AnimalsJson.AnimalJson
+  const category = categoryChoice.split(' (')[0];
 
   return <section>
     <h1>Our Products</h1>
-    <FilterDropdown />
-    <div id="animals">
-      {animals
-        .map((props, i) => <Animals key={i} {...props} />)
-      }
-
-    </div>
+    <Select
+      label="Category"
+      value={categoryChoice}
+      changeHandler={setCategoryChoice}
+      options={categories}
+    />
+    {animals
+      .filter(x => category === 'All' || x.category.includes(category))
+      .map(({ id, name, slug, description, wikiUrl, imageAspectRatio, category }) =>
+        <Link key={id} to={'/animals/' + slug}>
+          <img
+            src={"/animal-images/" + slug + ".webp"}
+            alt={"Image of a " + name + "."} />
+          <h3>{name}</h3>
+          <p>{description}</p>
+          <a href={wikiUrl}>Read More</a>
+          <h6>{imageAspectRatio}</h6>
+          <h6>{category}</h6>
+        </Link>)}
   </section>
 }

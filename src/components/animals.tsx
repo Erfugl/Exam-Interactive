@@ -1,4 +1,4 @@
-import type { AnimalData } from '../pages/ProductsPage';
+import type { AnimalData } from './animaldatamgmt';
 import SpeciesPhoto from './SpeciesPhoto';
 
 export default function Animals({ name, description }: AnimalData) {
