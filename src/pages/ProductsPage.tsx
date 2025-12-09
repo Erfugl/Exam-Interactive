@@ -1,18 +1,26 @@
-import { animals, categories } from '../components/animaldatamgmt';
+import { categoriesHandler } from '../components/animaldatamgmt';
 import '../scss/productspage.scss';
 import { useState } from 'react';
 import Select from '../components/select';
-import { Link } from 'react-router-dom';
-import { kMaxLength } from 'buffer';
-
+import { Link, useLoaderData } from 'react-router-dom';
+import AnimalLoader from '../components/animalloader';
 
 ProductsPage.route = {
   path: '/products',
   menuLabel: 'Products',
-  index: 2
+  index: 2,
+  loader: AnimalLoader
 };
 
+const { animals } = useLoaderData() as AnimalData;
+
 export default function ProductsPage() {
+
+  let {
+    animals,
+    categories
+  } = categoriesHandler(useLoaderData().animals);
+
   const [categoryChoice, setCategoryChoice] =
     useState('All');
 

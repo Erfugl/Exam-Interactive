@@ -1,17 +1,19 @@
 import type { AnimalData } from '../components/animaldatamgmt'
-import { useParams, Link } from 'react-router-dom'
+import { useParams, Link, useLoaderData } from 'react-router-dom'
 import NotFoundPage from './NotFoundPage'
 import { animals } from '../components/animaldatamgmt'
+import AnimalLoader from '../components/animalloader'
 
 AnimalPage.route = {
   path: '/animals/:slug',
-  parent: '/'
+  parent: '/',
+  loader: AnimalLoader
 }
 
 export default function AnimalPage() {
   const { slug } = useParams();
 
-  const animal = (animals as AnimalData[])
+  const animal = (useLoaderData().animals[0] as AnimalData[])
     .find(x => x.slug === slug) as AnimalData;
   if (!animal) {
     return <NotFoundPage />
