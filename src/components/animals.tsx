@@ -1,4 +1,4 @@
-import type { AnimalData } from './animaldatamgmt';
+import type { AnimalData } from './helpers';
 import SpeciesPhoto from './SpeciesPhoto';
 
 export default function Animals({ name, description }: AnimalData) {
