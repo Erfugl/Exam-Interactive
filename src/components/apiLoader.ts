@@ -13,10 +13,18 @@ export async function FrameLoader() {
   }
 }
 
+export async function MaterialLoader() {
+  let url = '/api/en/frameMaterials'
+  return {
+    materials: await (await fetch(url)).json()
+  }
+}
+
 export async function ApiLoader({ params }: any) {
-  const [animals, frames] = await Promise.all([
+  const [animals, frames, materials] = await Promise.all([
     AnimalLoader({ params }),
-    FrameLoader()
+    FrameLoader(),
+    MaterialLoader()
   ]);
-  return { animals: animals.animals, frames: frames.frames };
+  return { animals: animals.animals, frames: frames.frames, materials: materials.materials };
 }

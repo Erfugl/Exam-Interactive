@@ -1,5 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import routes from '../routes';
+import { CartButton } from '../components/shoppingCart';
 
 
 export default function Header() {
@@ -11,5 +12,6 @@ export default function Header() {
       {routes.filter(x => x.menuLabel).map(({ menuLabel, path }, i) =>
         <NavLink className='links' key={i} to={path}>{menuLabel}</NavLink>)}
     </nav>
+    <CartButton />
   </header>
 }

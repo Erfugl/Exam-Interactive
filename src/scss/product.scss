@@ -1,0 +1,16 @@
+.frame {
+  border-style: solid;
+  border-color: black;
+  border-width: 1px;
+  width: 500px;
+  margin: 5px;
+}
+
+.frameOptions {
+  display: flex;
+  flex-direction: row;
+}
+
+.products {
+  margin: 5px;
+}
