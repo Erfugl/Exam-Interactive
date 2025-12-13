@@ -6,6 +6,7 @@ import { getCompatibleFrames, materialsHandler } from '../components/helpers'
 import { useState } from 'react'
 import Select from '../components/select'
 import BuyButton from '../components/buyButton'
+import FramePreview from '../components/frameRender'
 import '../scss/product.scss'
 
 AnimalPage.route = {
@@ -33,6 +34,7 @@ export default function AnimalPage() {
 
   const [material, setMaterial] =
     useState(materials[0] || 'All');
+  const [withMat, setWithMat] = useState(false);
 
   const selectedMaterial = loaderData.materials.find(m => m.name === material);
 
@@ -52,6 +54,15 @@ export default function AnimalPage() {
         changeHandler={setMaterial}
         options={materials}
       />
+      <label>
+        <input
+          type="checkbox"
+          checked={withMat}
+          onChange={(e) => setWithMat(e.target.checked)}
+        />
+        Include Mat
+      </label>
+
       <h3>Frame Options:</h3>
       <div className="frameOptions">
         {fFrames.map(frame => (

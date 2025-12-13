@@ -44,7 +44,6 @@ a {
 /*Header*/
 header {
   background-color: #4f772d;
-  width: 100vw;
   padding: 20px;
   display: flex;
   justify-content: space-between;
@@ -74,6 +73,10 @@ nav {
   padding: 1rem;
   border-radius: 4px;
   margin: 5px;
+}
+
+#cart-button {
+  margin-left: auto;
 }
 
 #total {

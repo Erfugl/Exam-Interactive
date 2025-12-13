@@ -1,15 +1,4 @@
-#animalContainer {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-
 .animalCard {
-  width: 500px;
-  height: 1000px;
-  margin: 20px;
-  padding: 20px;
   background-color: #90a955;
   color: white;
   display: flex;

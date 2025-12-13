@@ -37,7 +37,7 @@ export function CartButton() {
   }, [show]);
 
   return (
-    <div>
+    <div className="cart-button">
       <Button ref={target} onClick={() => setShow(!show)}>
         Cart ({cartContents.filter(item => item.itemType === "ITEM").length})
       </Button>
